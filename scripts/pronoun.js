@@ -1,4 +1,4 @@
-const pronouns = ["he", "she", "they", "it", "xe", "fae", "ey", "ze", "ae"];
+const pronouns = ["xe/xem", "they/them", "it/its"]; // you can change this to your pronouns
 
 function getRandomPronoun() {
     const randomIndex = Math.floor(Math.random() * pronouns.length);

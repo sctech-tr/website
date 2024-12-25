@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Trebuchet MS', sans-serif;
     background-color: #1e1e1e; /* Dark terminal background */
     color: #c5c8c6; /* Light grey text */
     margin: 0;
@@ -156,6 +156,13 @@ footer a:hover {
     grid-column: span 2; /* Spans 2 columns */
 }
 
-.me {
+.rounded-img {
     border-radius: 50%;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
