@@ -1,4 +1,12 @@
+# google ad stuff
 User-agent: Mediapartners-Google*
+Disallow: *
+
+# web crawlers
+User-agent: SEMrushBot
+Disallow: *
+
+User-agent: DotBot
 Disallow: *
 
 Sitemap: https://sctech.netlify.app/sitemap.xml
