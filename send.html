@@ -13,7 +13,7 @@
         })();
 
         function sendMail(e) {
-            e.preventDefault(); // Prevent default form submission
+            e.preventDefault(); // prevent default form submission
             if (typeof hcaptcha !== 'undefined') {
                 const response = hcaptcha.getResponse();
                 if (response.length === 0) {
@@ -36,7 +36,7 @@
 </head>
 <body>
     <h2>send me some messages</h2>
-    <h4>pls don't abuse this</h4>
+    <h4>i also use this to send myself ideas when i'm outside</h4>
     <form id="emailForm" onsubmit="sendMail(event)">
         <label for="subject">your name:</label><br>
         <input type="text" id="from_name" name="from_name" required><br><br>
@@ -44,8 +44,8 @@
         <label for="subject">subject:</label><br>
         <input type="text" id="subject" name="subject" required><br><br>
 
-        <label for="subject">your email:</label><br>
-        <input type="text" id="reply_to" name="reply_to" required><br><br>
+        <label for="subject">your email: (if you want me to reply)</label><br>
+        <input type="text" id="reply_to" name="reply_to"><br><br>
         
         <label for="message">message:</label><br>
         <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
