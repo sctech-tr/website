@@ -19,11 +19,18 @@ class SeasonalButton extends HTMLElement {
       autumn: 'orange',
     };
 
-    // Apply styles
-    button.style.backgroundColor = seasonColors[season];
-    button.style.border = '1px solid black';
-    button.style.padding = '10px 20px';
-    button.style.cursor = 'pointer';
+    // Add styles for the button
+    const style = document.createElement('style');
+    style.textContent = `
+      seasonal-button {
+        background-color: ${seasonColors[season]};
+        border: 1px solid black;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+    `;
 
     // Add click handling
     button.addEventListener('click', () => {
@@ -33,6 +40,8 @@ class SeasonalButton extends HTMLElement {
       }
     });
 
+    // Append style and button to shadow DOM
+    shadow.appendChild(style);
     shadow.appendChild(button);
   }
 
