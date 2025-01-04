@@ -25,7 +25,7 @@ here are the colors for each season:
 - `onclick`: works like normal js onclick
 ### example
 ```html
-<script src="https://sctech.netlify.app/pkg/seasonal-buttons.js" async defer>
+<script src="https://sctech.netlify.app/pkg/seasonal-buttons.js" async defer></script>
 <seasonal-button text="click me!" onclick="alert('hello!')"></seasonal-button>
 ```
 you can access it via `https://sctech.netlify.app/pkg/seasonal-buttons.js`
