@@ -9,7 +9,16 @@ class SeasonalButton extends HTMLElement {
       const button = document.createElement('button');
       const buttonText = this.getAttribute('text');
       button.textContent = buttonText || 'Click me!';
-  
+
+      // Helper to determine the season
+      getSeason() {
+        const month = new Date().getMonth(); // 0 = January, 11 = December
+        if (month >= 2 && month <= 4) return 'spring';
+        if (month >= 5 && month <= 7) return 'summer';
+        if (month >= 8 && month <= 10) return 'autumn';
+        return 'winter';
+      }
+        
       // Determine the current season
       const season = this.getSeason();
       const seasonColors = {
@@ -32,15 +41,6 @@ class SeasonalButton extends HTMLElement {
       });
   
       shadow.appendChild(button);
-    }
-  
-    // Helper to determine the season
-    getSeason() {
-      const month = new Date().getMonth(); // 0 = January, 11 = December
-      if (month >= 2 && month <= 4) return 'spring';
-      if (month >= 5 && month <= 7) return 'summer';
-      if (month >= 8 && month <= 10) return 'autumn';
-      return 'winter';
     }
   }
   
