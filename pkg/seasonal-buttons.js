@@ -22,7 +22,7 @@ class SeasonalButton extends HTMLElement {
     // Add styles for the button
     const style = document.createElement('style');
     style.textContent = `
-      seasonal-button {
+      button {
         background-color: ${seasonColors[season]};
         border: 1px solid black;
         padding: 10px 20px;
