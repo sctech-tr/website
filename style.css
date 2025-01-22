@@ -21,7 +21,7 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    border-radius: 3px; /* Slightly rounded for terminal-like buttons */
+    border-radius: 5px; /* Slightly rounded for terminal-like buttons */
     cursor: pointer;
 }
 
