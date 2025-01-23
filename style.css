@@ -48,16 +48,6 @@ input[type="text"]:focus {
     box-shadow: 0 0 4px rgba(80, 250, 123, 0.5); /* Greenish shadow */
 }
 
-/* Example Container for Alignment */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; /* Reduced space between elements */
-    margin: 20px auto; /* Centered container with auto margins */
-    max-width: 600px; /* Set a max width for better layout control */
-}
-
 /* Code Block Styles */
 .code-block {
     color: #f8f8f2; /* Light text */
