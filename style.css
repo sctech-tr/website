@@ -75,9 +75,7 @@ a:hover {
     color: #ffffff; /* White hover */
 }
 
-.centered_img {
-    align-self: center;
-}
+
 
 /* Grid Layout */
 .grid-container {
@@ -101,13 +99,6 @@ a:hover {
 .grid-item:hover {
     transform: translateY(-5px); /* Lift on hover */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Title Style */
-.site-title {
-    text-align: center;
-    color: #50fa7b; /* Bright green title */
-    margin-top: 20px;
 }
 
 /* Footer */
@@ -144,10 +135,6 @@ footer a:hover {
 
 .large-tile-horizontal {
     grid-column: span 2; /* Spans 2 columns */
-}
-
-.rounded-img {
-    border-radius: 50%;
 }
 
 .centered {

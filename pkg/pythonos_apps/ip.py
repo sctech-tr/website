@@ -1,7 +1,7 @@
 import requests
 
 def get_public_ip():
-    response = requests.get('https://ident.me')
+    response = requests.get('https://api64.ipify.org')
     if response.status_code == 200:
         return response.text
     else:
