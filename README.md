@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fc1bc6e4-be4c-4a3b-8ac5-5b55c52e409e/deploy-status)](https://app.netlify.com/sites/sctech/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/88572910-6baf-469b-8531-09f49cc7dbe2/deploy-status)](https://app.netlify.com/sites/sctech/deploys)
 # welcome to my website!
 you will find things here.
 ## about "today's overview" api
