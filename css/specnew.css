@@ -1,0 +1,30 @@
+  body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #222;
+      margin: 0;
+      padding: 20px;
+  }
+  .wrap { max-width: 900px; margin: auto; }
+  h1 { font-size: 28px; margin-bottom: 10px; }
+  h2 { font-size: 20px; margin-top: 20px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  .card { border: 1px solid #ddd; padding: 15px; border-radius: 6px; background: #fafafa; }
+  .row { display: grid; grid-template-columns: 120px 1fr 1fr auto; gap: 8px; margin-bottom: 10px; align-items: center; }
+  input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 102%;
+      box-sizing: border-box;
+  }
+
+  .mini-actions button { margin-left: 4px; padding: 4px 6px; font-size: 12px; }
+  .actions { margin-top: 15px; }
+  .btn { padding: 6px 12px; margin-right: 8px; border: 1px solid #ccc; border-radius: 4px; background: #f0f0f0; cursor: pointer; }
+  .btn.primary { background: #007bff; color: #fff; border-color: #007bff; }
+  .spec-item { display: grid; grid-template-columns: 120px 1fr; gap: 8px; margin-bottom: 6px; }
+  .spec-key { font-weight: bold; }
+  .footer { margin-top: 20px; font-size: 13px; color: #555; }
