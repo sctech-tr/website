@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PC Specs Sharer</title>
+<link href="css/specnew.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+  <div class="wrap">
+    <h1>PC Specs Sharer</h1>
+    <div class="grid">
+      <section class="card" id="editor">
+        <h2>Enter Your Parts</h2>
+        <div id="fields"></div>
+        <div class="actions">
+          <button class="btn" id="add-field">+ Add Field</button>
+          <button class="btn" id="reset">Reset</button>
+          <button class="btn" id="export-json">Export JSON</button>
+          <button class="btn" id="import-json">Import JSON</button>
+          <button class="btn primary" id="share">Copy Share Link</button>
+        </div>
+      </section>
+      <section class="card" id="preview">
+        <h2>Spec Sheet Preview</h2>
+        <div id="spec"></div>
+      </section>
+    </div>
+    <p class="footer">Share the link above with your specs encoded in the URL. No server used.</p>
+    <p class="footer">Each row supports a separate link (e.g., to Amazon or manufacturer).</p>
+  </div>
+
+  <template id="row-template">
+    <div class="row">
+      <input type="text" class="key-input" placeholder="Label">
+      <input type="text" class="val-input" placeholder="Value">
+      <input type="text" class="link-input" placeholder="Link (optional)">
+      <div class="mini-actions">
+        <button class="btn move-up">▲</button>
+        <button class="btn move-down">▼</button>
+        <button class="btn remove">✕</button>
+      </div>
+    </div>
+  </template>
+
+  <script>
+      const enc = {
+        toBase64Url: (str) => btoa(unescape(encodeURIComponent(str))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+/g,''),
+        fromBase64Url: (s) => decodeURIComponent(escape(atob(s.replace(/-/g,'+').replace(/_/g,'/'))))
+    };
+
+    const DEFAULT_FIELDS = [
+        ["Build Name","",""],["CPU","",""],["Motherboard","",""],["RAM","",""],
+        ["GPU","",""],["Storage","",""],["Power Supply","",""],["Monitor","",""],
+        ["Keyboard","",""],["Mouse","",""],["Case","",""],["OS","",""],["Notes","",""]
+    ];
+
+    const els = {
+        fields: document.getElementById('fields'),
+        spec: document.getElementById('spec'),
+        addField: document.getElementById('add-field'),
+        resetBtn: document.getElementById('reset'),
+        shareBtn: document.getElementById('share'),
+        exportBtn: document.getElementById('export-json'),
+        importBtn: document.getElementById('import-json'),
+        rowTpl: document.getElementById('row-template'),
+        editor: document.getElementById('editor')
+    };
+
+    let data = [];
+
+    function createRow([k,v,l] = ["","",""]) {
+        const node = els.rowTpl.content.firstElementChild.cloneNode(true);
+        const keyInput = node.querySelector('.key-input');
+        const valInput = node.querySelector('.val-input');
+        const linkInput = node.querySelector('.link-input');
+        keyInput.value = k; valInput.value = v; linkInput.value = l;
+        node.querySelector('.move-up').onclick = () => {
+            const idx = [...els.fields.children].indexOf(node);
+            if(idx>0) els.fields.insertBefore(node, els.fields.children[idx-1]);
+            syncFromDOM();
+        };
+        node.querySelector('.move-down').onclick = () => {
+            const idx = [...els.fields.children].indexOf(node);
+            if(idx < els.fields.children.length-1) els.fields.insertBefore(els.fields.children[idx+1], node);
+            syncFromDOM();
+        };
+        node.querySelector('.remove').onclick = () => { node.remove(); syncFromDOM(); };
+        keyInput.oninput = valInput.oninput = linkInput.oninput = syncFromDOM;
+        return node;
+    }
+
+    function renderEditor(){
+        els.fields.innerHTML='';
+        data.forEach(p=>els.fields.appendChild(createRow(p)));
+        renderSpec();
+    }
+
+    function renderSpec(){
+        els.spec.innerHTML='';
+        data.filter(([k,v])=>k.trim()&&v.trim()).forEach(([k,v,l])=>{
+            const div=document.createElement('div');div.className='spec-item';
+            let valueHTML = l && l.trim() ? `<a href="${l}" target="_blank">${v}</a>` : v;
+            div.innerHTML=`<div class="spec-key">${k}</div><div>${valueHTML}</div>`;
+            els.spec.appendChild(div);
+        });
+    }
+
+    function syncFromDOM(){
+        data=[...els.fields.children].map(r=>[
+            r.querySelector('.key-input').value,
+                                          r.querySelector('.val-input').value,
+                                          r.querySelector('.link-input').value
+        ]);
+        renderSpec();updateURL(false);
+    }
+
+    function updateURL(copy=false){
+        const obj = Object.fromEntries(
+            data.filter(([k,v,l]) => (k+v+l).trim())
+            .map(([k,v,l]) => [k, [v, l]])
+        );
+        const url = new URL(location.href);
+        url.searchParams.set('d', enc.toBase64Url(JSON.stringify(obj)));
+        url.searchParams.set('view',1);
+        history.replaceState(null,'',url);
+        if(copy) navigator.clipboard.writeText(url);
+    }
+
+    function loadFromURL(){
+        const d=new URLSearchParams(location.search).get('d');if(!d)return false;
+        try{
+            const obj=JSON.parse(enc.fromBase64Url(d));
+            // Ensure array with 3 fields [k,v,l]
+            data=Object.entries(obj).map(([k,v])=>{
+                if(Array.isArray(v)) return [k,v[0]||"",v[1]||""];
+                return [k,v,""];
+            });
+            return true;
+        }catch{return false;}
+    }
+
+    function exportJSON(){
+        const obj=Object.fromEntries(data.filter(([k,v,l])=>(k+v+l).trim()).map(([k,v,l])=>[k,[v,l]]));
+        const blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+        const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='pc-specs.json';a.click();
+    }
+
+    function importJSON(){
+        const input=document.createElement('input');input.type='file';input.accept='application/json';
+        input.onchange=e=>{
+            const f=e.target.files[0];if(!f)return;
+            const reader=new FileReader();
+            reader.onload=()=>{
+                try{
+                    const obj=JSON.parse(reader.result);
+                    data=Object.entries(obj).map(([k,v])=>{
+                        if(Array.isArray(v)) return [k,v[0]||"",v[1]||""];
+                        return [k,v,""];
+                    });
+                    renderEditor();updateURL(false);
+                }catch{}
+            };
+            reader.readAsText(f);
+        };
+        input.click();
+    }
+
+    function init(){
+        if(!loadFromURL()) data=DEFAULT_FIELDS.map(x=>[...x]);
+        renderEditor();
+        els.addField.onclick=()=>{data.push(["","",""]);els.fields.appendChild(createRow(["","",""]));syncFromDOM();};
+        els.resetBtn.onclick=()=>{data=DEFAULT_FIELDS.map(x=>[...x]);renderEditor();updateURL(false);};
+        els.shareBtn.onclick=()=>updateURL(true);
+        els.exportBtn.onclick=exportJSON;
+        els.importBtn.onclick=importJSON;
+        if(new URLSearchParams(location.search).has("view")){
+            els.editor.style.display="none";
+        }
+    }
+    init();
+  </script>
+</body>
+</html>
