@@ -89,16 +89,16 @@ a:hover {
     background-color: #282a36; /* Dark background for tiles */
     border: 2px solid #44475a; /* Subtle border */
     padding: 20px;
-    border-radius: 8px;
-    color: #c5c8c6; /* Light grey text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* border-radius: 8px; */
+   color: #c5c8c6; /* Light grey text */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Tile hover effect */
 .grid-item:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    /* transform: translateY(-5px); /* Lift on hover */
+    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); */
 }
 
 /* Footer */
@@ -125,8 +125,8 @@ footer a:hover {
     font-size: 1.5em; /* Optional: make it stand out more */
     text-align: center;
     padding: 30px; /* Larger padding for a banner-like look */
-    border-radius: 8px; /* Rounded corners for consistency */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    /* border-radius: 8px; /* Rounded corners for consistency */
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); */
 }
 
 .large-tile-vertical {
@@ -146,4 +146,17 @@ footer a:hover {
 
 .representative-h-card {
     display: none;
+}
+
+#statuscafe {
+    padding: .5em;
+    border: 1px solid #ffffff;
+}
+
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
 }
