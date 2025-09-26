@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- sorry for bad indentation -->
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
@@ -21,28 +20,104 @@
         async src="//gc.zgo.at/count.js"></script>
     <link rel="stylesheet" type="text/css" href="https://file.garden/ZrZSgsrYfQXsO7QH/ww/webmasterwebring.css">
     <title>sctech's website!!</title>
-  </head>
-  <body>
-    <main class="grid-container">
-    <div class="grid-item full-width">
+<style>
+
+/* Tabs Bar */
+.tabs {
+  position: sticky;
+  top: 0;
+  display: flex;              /* horizontal */
+  background-color: #282a36;
+  border-bottom: 2px solid #44475a;
+  z-index: 1000;
+}
+
+.tabs label {
+  flex: 1;                    /* equal width tabs */
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  color: #c5c8c6;
+  transition: background 0.2s ease;
+}
+
+.tabs label:hover {
+  background-color: #44475a;
+  color: #ffffff;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* tab content container */
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+/* show active tab */
+#tab1:checked ~ .content #content1,
+#tab2:checked ~ .content #content2,
+#tab3:checked ~ .content #content3,
+#tab4:checked ~ .content #content4,
+#tab5:checked ~ .content #content5,
+#tab6:checked ~ .content #content6 {
+  display: block;
+}
+
+/* tab highlight */
+#tab1:checked ~ .tabs label[for="tab1"],
+#tab2:checked ~ .tabs label[for="tab2"],
+#tab3:checked ~ .tabs label[for="tab3"],
+#tab4:checked ~ .tabs label[for="tab4"],
+#tab5:checked ~ .tabs label[for="tab5"],
+#tab6:checked ~ .tabs label[for="tab6"] {
+  background-color: #50fa7b;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<input type="radio" name="tab" id="tab1" checked>
+<input type="radio" name="tab" id="tab2">
+<input type="radio" name="tab" id="tab3">
+<input type="radio" name="tab" id="tab4">
+<input type="radio" name="tab" id="tab5">
+<input type="radio" name="tab" id="tab6">
+
+<div class="tabs">
+  <label for="tab1">home</label>
+  <label for="tab2">about me</label>
+  <label for="tab3">contact</label>
+  <label for="tab4">web junk</label>
+  <label for="tab5">links</label>
+  <label for="tab6">webrings & buttons</label>
+</div>
+
+<div class="content">
+  <div id="content1" class="tab-content">
     <img style="align-self: center; border-radius: 50%;" width="250" height="250" src="img/me.jpg">
-    <h1><strong>hi!!!</strong></h1>
-    <p>welcome to my personal corner of the world wide web! :D<br></p>
-    </div>
-    <div class="grid-item">
-    <h3>info:</h3>
-    <p>name: sctech (sc for short)<br>
-      pronouns: <a href="https://my.pronouns.page/are/he&they">he/they</a> but i honestly dont care<br>
-      languages: english (fluent), turkish (native), japanese (basics)<br>
-      location: <a href="https://en.wikipedia.org/wiki/Bursa">bursa, türkiye</a> (🇹🇷)<br>
-      timezone: utc+3<br>
-      openpgp: <a href="./sctech.gpg">this very long shit</a>
-      <br>
-    </p>
-    </div>
-    <div class="grid-item large-tile-horizontal">
-      <h3>about me:</h3>
-      <p>hi!!!!<br></p>
+    <h1 style="align-self: center;"><strong>hi!</strong></h1>
+    <p style="align-self: center;">welcome to my personal corner of the world wide web! :D<br></p>
+    <p style="align-self: center;">you can change tabs here to see stuff :P<br></p>
+    <p style="align-self: center;">enjoy!<br></p>
+    <a href="https://sctech.netlify.app/">
+      <img src="img/buttons/sctech.png" width="88" height="31" alt="sctech's website :)">
+    </a>
+    <img src="img/buttons/mobile-unfriendly.png" alt="mobile unfriendly" width="88" height="31">
+    <img src="img/buttons/saynotoweb3.gif" alt="say no to web3" width="88" height="31">
+    <a href="https://www.mabsland.com/Adoption.html">
+      <img src="img/buttons/pg.gif" alt="rated PG" width="88" height="31">
+    </a>
+    <img src="img/buttons/cookies.png" alt="no cookies" width="88" height="31">
+    <img src="img/buttons/antiai.gif" alt="" width="88" height="31">
+  </div>
+
+  <div id="content2" class="tab-content">
+    <h2>about me</h2>
+    <p>hi! im sctech<br></p>
       <p>i'm a code maker person (when i feel like it), a linux user (i use fedora btw) and uhh more? idk<br></p>
       <p>i'm feeling like this rn:<br></p>
       <a href="https://www.imood.com/users/sctech"><img src="https://moods.imood.com/display/uname-sctech/fg-FFFFFF/trans-1/imood.gif" alt="The current mood of sctech at www.imood.com" border="0"><br></a>
@@ -53,12 +128,10 @@
       <a href="https://www.last.fm/user/sctech">see what music im up to rn :D (probably vocaloid)</a><br>
       <p>here is a song i like: (i sometimes update this)<br></p>
       <div style="background-color: rgb(88, 85, 85); border-radius: 10px;">
-        <h3>NORMAL HUMAN</h3>
-        <p>by <a href="https://vocadb.net/Ar/30772">SOOOO</a></p>
-        <a href="https://music.youtube.com/watch?v=Hkqe_OtLk1U">View on YouTube Music</a>
+        <h3>flop era</h3>
+        <p>by <a href="https://vocadb.net/Ar/80555">ePiaeon</a></p>
+        <a href="https://music.youtube.com/watch?v=RHcxZX6iBYU">View on YouTube Music</a>
       </div>
-    </div>
-    <div class="grid-item">
     <h3>hobbies & likes:</h3>
     <p>coding<br>
       wii hacking<br>
@@ -74,32 +147,32 @@
       <a href="https://music.youtube.com/playlist?list=PL4Vk1OlcAjDH3wwKeNFqm2fuJcxMDJB_R">vocaloid<br></a>
       and more that i dont want to list cuz im lazy :P
     </p>
-    </div>
-      <div class="grid-item">
-        <h3>contact me</h3>
-        <p>you can contact me via..</p>
+  </div>
+
+  <div id="content3" class="tab-content">
+    <h2>contact</h2>
+    <p>you can contact me via..</p>
         <p>form: <a href="send.html">click here</a> <strong>(preferred way dw i check it)</strong></p>
         <p>email: <a href="mailto:sctech@sctech.localplayer.dev" rel="me">sctech [at] sctech [dot] localplayer [dot] dev</a><br></p>
         <p>discord: @sctech_tr<br></p>
         <p>github: open an issue <a href="https://github.com/sctech-tr/sctech-tr">here</a><br></p>
         <p>matrix: @sctech-tr:matrix.org <strong>(not preferred)</strong></p>
-        </div>
-    <div class="grid-item">
-      <h3>about the website:</h3>
-      <p>webhost: <a href="https://netlify.com">netlify</a><br></p>
+  </div>
+  <div id="content4" class="tab-content">
+    <h3>about the website:</h3>
+      <p>webhost: <a href="https://netlify.com">netlify</a> (i <em>would</em> use nekoweb but netlify is fast. really fast)<br></p>
       <p>domain: <a href="https://github.com/open-domains">open domains</a><br></p>
       <p>source code: <a href="https://github.com/sctech-tr/website">on github</a><br></p>
       <p>license: <a href="https://choosealicense.com/licenses/mit/">mit license</a><br></p>
       <p>written in: <a href="https://en.wikipedia.org/wiki/HTML">html</a> and <a href="https://en.wikipedia.org/wiki/CSS">css</a><br></p>
-      <p>last updated: 06-09-2025 (dd-mm-yyyy)<br></p>
-      <p></p>
-    </div>
-    
-      
-      <div class="grid-item">
+      <p>last updated: 25-09-2025 (dd-mm-yyyy) (this may be wrong)<br></p>
+
+
+
+
       <h3>web experiments:</h3>
       <a href="https://cndl.web.app">codename darklight<br></a>
-      <a href="https://lolchat.app.sctech.localplayer.dev">lolchat</a> (if stuck go <a href="https://lolchat-backend.onrender.com/">here</a> and wait<br>
+      <a href="https://lolchat.app.sctech.localplayer.dev">lolchat</a> (if stuck go <a href="https://lolchat-backend.onrender.com/">here</a> and wait)<br>
       <a href="specnew.html">pc spec sharer<br></a>
       <a href="https://breadblog.app.sctech.localplayer.dev">breadblog<br></a>
       <a href="https://go-md.app.sctech.localplayer.dev">go markdown!!<br></a>
@@ -113,10 +186,24 @@
       <a href="goexplore.html">explorer<br></a>
       <a href="wii.html">the not-so wii friendly webpage<br></a>
       <a href="gh-index.html">github link shortener<br></a>
-      </div>
-      <div class="grid-item large-tile-horizontal">
-          <h3>links:</h3>
-          <h4>the order is a bit messed up but i dont wanna fix it</h4>
+
+      <h3>stuff i can do apparently:</h3>
+          <p align="center">
+            <a href="https://skillicons.dev">
+              <img src="https://skillicons.dev/icons?i=bash,c,cs,dotnet,css,html,js,git,md,nodejs,py&perline=3" />
+            </a>
+          </p>
+          <h3>i use this junk:</h3>
+          <p align="center">
+            <a href="https://skillicons.dev">
+              <img src="https://skillicons.dev/icons?i=linux,github,pycharm,vscode,androidstudio&perline=3" />
+            </a>
+          </p>
+
+  </div>
+  <div id="content5" class="tab-content">
+  <h2>links:</h2>
+  <h4>the order is a bit messed up but i dont wanna fix it</h4>
             <a href="https://go.sctech.localplayer.dev/openprofile" rel="me">OpenProfile<br></a>
             <a href="https://www.blogger.com/profile/04944731901473885405" rel="me">Blogger<br></a>
             <a href="https://discordapp.com/users/823106689816723466" rel="me">Discord<br></a>
@@ -134,22 +221,9 @@
             <a href="https://piapro.jp/sctech" rel="me">Piapro (ピアプロ)<br></a>
             <a href="https://stackoverflow.com/users/27170304/sctech-tr" rel="me">StackOverflow<br></a>
             <a href="https://oscwii.org/library?coder=sctech-tr">Open Shop Channel<br></a>
-          </div>
-        <div class= "grid-item"><h3>stuff i can do apparently:</h3>
-          <p align="center">
-            <a href="https://skillicons.dev">
-              <img src="https://skillicons.dev/icons?i=bash,c,cs,dotnet,css,html,js,git,md,nodejs,py&perline=3" />
-            </a>
-          </p>
-          <h3>i use this junk:</h3>
-          <p align="center">
-            <a href="https://skillicons.dev">
-              <img src="https://skillicons.dev/icons?i=linux,github,pycharm,vscode,androidstudio&perline=3" />
-            </a>
-          </p>          
-        </div>
-        
-    <div class= "grid-item large-tile-horizontal"><h3>buttons:</h3>
+  </div>
+  <div id="content6" class="tab-content">
+    <h2>buttons:</h2>
     <p>want your button here? <a href="mailto:sctech@sctech.localplayer.dev">contact me!</a><br></p>
     <a href="https://sctech.netlify.app/">
       <img src="img/buttons/sctech.png" width="88" height="31" alt="sctech's website :)">
@@ -212,20 +286,8 @@
     <img src="img/buttons/gothtml.gif" alt="" width="88" height="31">
     <img src="img/buttons/antiai.gif" alt="" width="88" height="31">
     <a href="https://possiblyaxolotl.com"><img src="https://possiblyaxolotl.com/images/88x31/88x31.png" title="PossiblyAxolotl? It's more likely than you think!" alt="PossiblyAxolotl" /></a>
-    <img src="img/buttons/demi.png" alt="demigender now!" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    <img src="img/buttons/empty.png" alt="for rent" width="88" height="31">
-    </div>
-      <div class="grid-item">
-      <h3>webrings:</h3>
+    <img src="img/buttons/hellontheweb.gif" alt="" width="88" height="31">
+    <h2>webrings:</h2>
       <p><a href='https://webring.dinhe.net/prev/https://sctech.localplayer.dev'>previous</a> | <a href="http://webring.dinhe.net/">retronaut webring</a> | <a href='https://webring.dinhe.net/next/https://sctech.localplayer.dev'>next</a></p>
       <p><a href="https://xn--sr8hvo.ws/previous">←</a>
       An <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
@@ -243,8 +305,6 @@
         <a href="https://bobs-club.net/" title="web ring">bob's club</a>
         <a href="https://bobs-club.net/site/sctech/succ" title="next site">&gt;&gt;</a>
       </span>
-      </div>
-    <div class="grid-item large-tile-horizontal">
       <h3>if you have a site, please put my button there!!</h3>
       <div class="code-block">
   &lt;a href="https://sctech.localplayer.dev"&gt;
@@ -252,22 +312,19 @@
   &lt;/a&gt;
       </div>
       <p>hotlinking's ok!! if my website ever goes down blame netlify >:C</p>
-    </div>
-    </main>
-    <br>
-    <br>
-    <footer>
+  </div>
+</div>
+<footer>
     <p>(c) 2024-2090 sctech</p>
     <p>this website is proudly powered by <a href="https://netlify.com">netlify</a>.
     <p>view source on <a href="https://github.com/sctech-tr/website">github</a></p>
-    <a href="p.html">:(</a>
   </footer>
-  <div class="h-card representative-h-card">
+    <div class="h-card representative-h-card">
     <img class="u-photo" src="https://sctech.localplayer.dev/img/me.jpg" alt="Profile Photo">
     <a class="p-name u-url" href="https://sctech.localplayer.dev">sctech</a>
     <p class="p-note">someone</p>
+    <a href="./sctech.gpg">gpg</a> <!-- nowhere to put -->
     <a class="p-email" href="mailto:sctech@sctech.localplayer.dev">sctech@sctech.localplayer.dev</a>
   </div>
-  </body>
+</body>
 </html>
-<!--- hey!! --->
