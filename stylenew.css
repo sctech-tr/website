@@ -22,7 +22,7 @@ margin: 0 1em 0.5em 1em;
  the images as variables */
 
 :root {
-    --body-bg-image: url('https://sadhost.neocities.org/images/tiles/redsilk.jpg'); /* i changed dis */
+    --body-bg-image: url('https://sctech.qzz.io/img/tiled.jpg'); /* i changed dis */
 
     /* colors */
     --content: #43256E;
