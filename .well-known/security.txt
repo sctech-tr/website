@@ -1,8 +1,8 @@
-Contact: https://sctech.localplayer.dev/send.html
-Contact: https://sctech.netlify.app/send.html
+Contact: https://sctech.qzz.io/send.html
 Contact: mailto:sctech@sctech.localplayer.dev
+Contact: mailto:sctech@sctech.qzz.io
 Contact: mailto:gamerselimiko@gmail.com
 Expires: 2050-12-31T20:59:00.000Z
-Encryption: https://sctech.localplayer.dev/sctech.gpg
+Encryption: https://sctech.qzz.io/sctech.gpg
 Preferred-Languages: en, tr
-Canonical: https://sctech.localplayer.dev/.well-known/security.txt
+Canonical: https://sctech.qzz.io/.well-known/security.txt
