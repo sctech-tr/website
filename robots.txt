@@ -9,5 +9,5 @@ Disallow: *
 User-agent: DotBot
 Disallow: *
 
-Sitemap: https://sctech.netlify.app/sitemap.xml
+Sitemap: https://sctech.qzz.io/sitemap.xml
  

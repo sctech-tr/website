@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image.v1">
   <url>
-    <loc>sctech.localplayer.dev/cndl</loc>
+    <loc>sctech.qzz.io/about</loc>
   </url>
-  <url>
-    <loc>sctech.localplayer.dev/wii</loc>
+    <url>
+    <loc>sctech.qzz.io/bookmarks</loc>
   </url>
-  <url>
-    <loc>sctech.localplayer.dev/registerwin95</loc>
+    <url>
+    <loc>sctech.qzz.io/meta</loc>
   </url>
-  <url>
-    <loc>sctech.localplayer.dev/cc</loc>
+    <url>
+    <loc>sctech.qzz.io/contact</loc>
   </url>
-  <url>
-    <loc>sctech.localplayer.dev/gh-index</loc>
+    <url>
+    <loc>sctech.qzz.io/sitemap</loc>
   </url>
-  <url>
-    <loc>sctech.localplayer.dev/index</loc>
-  </url>
-  <url>
-    <loc>sctech.localplayer.dev/send</loc>
-  </url>
-  <url>
-    <loc>sctech.localplayer.dev/teleport</loc>
-  </url>
-  <url>
-    <loc>sctech.localplayer.dev/ip</loc>
-  </url>
-  <url>
-    <loc>sctech.localplayer.dev/avspl</loc>
-  </url>
-  <url>
-    <loc>sctech.localplayer.dev/goexplore</loc>
-  </url>
-  <url>
-    <loc>sctech.localplayer.dev/specnew</loc>
+    <url>
+    <loc>sctech.qzz.io/defaults</loc>
   </url>
 </urlset>
