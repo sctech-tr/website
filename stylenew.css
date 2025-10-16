@@ -41,24 +41,24 @@ margin: 0 1em 0.5em 1em;
 
 @font-face {
     font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-Regular.ttf');
+    src: url('https://box.sctech.qzz.io/fonts/Nunito-Regular.ttf');
 }
 
 @font-face {
     font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-Bold.ttf');
+    src: url('https://box.sctech.qzz.io/fonts/Nunito-Bold.ttf');
     font-weight: bold;
 }
 
 @font-face {
     font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-Italic.ttf');
+    src: url('https://box.sctech.qzz.io/fonts/Nunito-Italic.ttf');
     font-style: italic;
 }
 
 @font-face {
     font-family: Nunito;
-    src: url('https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf');
+    src: url('https://box.sctech.qzz.io/fonts/Nunito-BoldItalic.ttf');
     font-style: italic;
     font-weight: bold;
 }

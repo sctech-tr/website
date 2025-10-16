@@ -1,13 +1,6 @@
-# google ad stuff
+# looks like you found my text file about robots. oh well
 User-agent: Mediapartners-Google*
 Disallow: *
-
-# web crawlers
-User-agent: SEMrushBot
-Disallow: *
-
-User-agent: DotBot
-Disallow: *
-
+# frfhurgehuechrwthrtyntı3yg3tygbtrgybncytrgbyrtbnyutcbgyut2ıucytyn2tı4bgytncbgnyrtnbg
 Sitemap: https://sctech.qzz.io/sitemap.xml
  
