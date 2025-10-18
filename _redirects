@@ -1,3 +1,7 @@
 /img/buttons/sctech.png  https://box.sctech.qzz.io/buttons/sctech.png  200
 /img/buttons/sctechred.png  https://box.sctech.qzz.io/buttons/sctechred.png  200
 /pythonos_appstore.json  https://box.sctech.qzz.io/pythonos_appstore.json  200
+/img/buttons/*  https://box.sctech.qzz.io/buttons/:splat  200
+/img/wallpapers/*  https://box.sctech.qzz.io/wallpapers/:splat  200
+/img/shared/*  https://box.sctech.qzz.io/shared/:splat  200
+/img/*  https://box.sctech.qzz.io/:splat  200
