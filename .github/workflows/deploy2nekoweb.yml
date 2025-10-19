@@ -15,5 +15,5 @@ jobs:
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
           nekoweb-domain: 'sctech.nekoweb.org'
           nekoweb-username: 'sctech'
-          directory: './'
+          directory: 'nekoweb '
 
