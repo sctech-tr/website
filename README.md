@@ -14,10 +14,10 @@ here are the colors for each season:
 - winter: `white`
 ### attributes
 - `text`: the text to display on the button
-- `onclick`: works like normal js onclick
+- `click`: works like normal js onclick
 ### example
 ```html
 <script src="https://box.sctech.qzz.io/seasonal-buttons.js" async defer></script>
-<seasonal-button text="click me!" onclick="alert('hello!')"></seasonal-button>
+<seasonal-button text="click me!" click="alert('hello!')"></seasonal-button>
 ```
 you can access it via `https://box.sctech.qzz.io/seasonal-buttons.js`
