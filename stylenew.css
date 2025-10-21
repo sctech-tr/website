@@ -89,7 +89,7 @@ body {
  t he other* elements, you will need to move that div outside
  of the container */
 #container {
-max-width: 900px;
+max-width: 1200px;
 /* this is the width of your layout! */
 /* if you change the above value, scroll to the bottom
  and cha*nge the media query according to the comment! */
