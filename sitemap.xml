@@ -16,6 +16,12 @@
     <loc>sctech.qzz.io/sitemap</loc>
   </url>
     <url>
-    <loc>sctech.qzz.io/defaults</loc>
+    <loc>sctech.qzz.io/uses</loc>
+  </url>
+      <url>
+    <loc>sctech.qzz.io/home</loc>
+  </url>
+        <url>
+    <loc>sctech.qzz.io/gh-index</loc>
   </url>
 </urlset>

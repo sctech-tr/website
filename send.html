@@ -3,55 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="stylenew.css" rel="stylesheet" type="text/css" media="all">
     <title>send me a message</title>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="https://hcaptcha.com/1/api.js" async defer></script>
-    <script>
-        (function(){
-            emailjs.init("cBNzAwZunI-sqz1Ng");
-        })();
-
-        function sendMail(e) {
-            e.preventDefault(); // prevent default form submission
-            if (typeof hcaptcha !== 'undefined') {
-                const response = hcaptcha.getResponse();
-                if (response.length === 0) {
-                    alert("please complete the hcaptcha.");
-                    return false;
-                }
-            } else {
-                alert("hcaptcha is not loaded properly. contact the site owner.");
-                return false;
-            }
-            emailjs.sendForm('service_khnxrpa', 'template_ro64laf', '#emailForm')
-            .then(function(response) {
-                alert('email sent successfully!');
-            })
-            .catch(function(error) {
-                alert('failed to send email. error: ' + JSON.stringify(error));
-            });
-        }
-    </script>
+    <script src="js/send.js"></script>
 </head>
 <body>
-    <h2>send me a message</h2>
-    <form id="emailForm" onsubmit="sendMail(event)">
-        <label for="subject">your name:</label><br>
-        <input type="text" id="from_name" name="from_name" required><br><br>
+    <div id="container"><div id="topBar"></div>
+            <div id="headerArea">
+                <nav id="navbar" style="margin-bottom: 10px;">
+                </nav>
+            </div>
+            <div id="flex">
+              <aside id="leftSidebar" style="margin-right: 10px;"></aside>
+                <main>
+                    <h2>send me a message</h2>
+                    <form id="emailForm" onsubmit="sendMail(event)">
+                    <label for="subject">your name:</label><br>
+                    <input type="text" id="from_name" name="from_name" required><br><br>
       
-        <label for="subject">subject:</label><br>
-        <input type="text" id="subject" name="subject" required><br><br>
+                    <label for="subject">subject:</label><br>
+                    <input type="text" id="subject" name="subject" required><br><br>
 
-        <label for="subject">your email: (if you want me to reply)</label><br>
-        <input type="text" id="reply_to" name="reply_to"><br><br>
+                    <label for="subject">your email: (if you want me to reply)</label><br>
+                    <input type="text" id="reply_to" name="reply_to"><br><br>
         
-        <label for="message">message:</label><br>
-        <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
+                    <label for="message">message:</label><br>
+                    <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
 
-        <div class="h-captcha" data-sitekey="3cbe28e8-d648-4372-b182-a6586f206864"></div>
+                    <div class="h-captcha" data-sitekey="3cbe28e8-d648-4372-b182-a6586f206864"></div>
 
-        <input type="submit" value="send!">
+                    <input type="submit" value="send!">
     </form>
+                  </main>
+              <aside id="rightSidebar" style="margin-left: 10px;"></aside>
+            </div>
+            <footer id="footer" style="margin-top: 10px;">(c) sctech 2024-2090. made using <a href="https://sadgrlonline.github.io/archived-sadgrl.online/projects/layout-builder/">sadgrl's layout builder</a></footer>
+        </div>
 </body>
 </html>

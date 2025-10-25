@@ -1,6 +1,8 @@
 # looks like you found my text file about robots. oh well
 User-agent: Mediapartners-Google*
 Disallow: *
-# frfhurgehuechrwthrtyntı3yg3tygbtrgybncytrgbyrtbnyutcbgyut2ıucytyn2tı4bgytncbgnyrtnbg
+
+User-agent: sctechsbot2bypassstuffs
+Allow: *
+
 Sitemap: https://sctech.qzz.io/sitemap.xml
- 

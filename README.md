@@ -5,19 +5,3 @@ you will find things here.
 birthday: https://github.com/sctech-tr/website/commit/37facd719459c023d5f025108486de58bec9b733 august 22nd dont forget this
 
 i host assets <a href="https://github.com/sctech-tr/box">here</a>
-## seasonal buttons!
-detect the season and display buttons with the appropriate colors!  
-here are the colors for each season:
-- spring: `lightgreen`
-- summer: `yellow`
-- autumn: `orange`
-- winter: `white`
-### attributes
-- `text`: the text to display on the button
-- `click`: works like normal js onclick
-### example
-```html
-<script src="https://box.sctech.qzz.io/seasonal-buttons.js" async defer></script>
-<seasonal-button text="click me!" click="alert('hello!')"></seasonal-button>
-```
-you can access it via `https://box.sctech.qzz.io/seasonal-buttons.js`
